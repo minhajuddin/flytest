@@ -16,6 +16,8 @@ func main() {
 		fmt.Fprintln(w, "<h1>HTTP Debug</h1>")
 		fmt.Fprintln(w, "<pre>"+string(bytes)+"</pre>")
 
+		log.Println("Serving request at /")
 	})
+	log.Println("Starting server on localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
